@@ -5,10 +5,15 @@ import App from './App'
 import VueResource from 'vue-resource'
 import VueResourceMock from 'vue-resource-mock'
 import MockData from './api/products'
+import VueLocalStorage from 'vue-localstorage'
+import Vuetify from 'vuetify'
 
 Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(VueResourceMock, MockData)
+Vue.use(VueLocalStorage)
+Vue.use(Vuetify)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

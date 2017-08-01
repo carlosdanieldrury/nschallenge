@@ -2,7 +2,6 @@
   <div class="product">
     <h1>Product</h1>
     <img src="../assets/images/produto1.png">
-    <p>{{imgUrl}}</p>
     <p class="title">{{product.title}}</p>
     <p class="price">{{product.price}}</p>
   </div>
@@ -22,6 +21,6 @@ export default {
 }
 </script>
 
-<<style>
+<style>
 
 </style>
