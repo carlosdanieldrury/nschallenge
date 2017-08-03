@@ -7,7 +7,7 @@
       <shoppingCart v-if="showCart" v-bind:closeShoppingCart='closeShoppingCart' v-bind:shoppingCartItems='cartItems'></shoppingCart>
     </transition>
     <div class="row">
-        <product class="col-sm-3" v-for="product in products" :product="product" v-bind:key="product.id"></product>
+        <product class="col-sm-3" v-for="product in products" :product="product" v-bind:key="product.id" :addItemToCartParent='addItemToCart'></product>
     </div>
 
   </div>
@@ -52,6 +52,7 @@ export default {
     },
     addItemToCart(item) {
       this.cartItems.push(item)
+      console.log('comprado ', this.cartItems)
     },
     removeItemFromCart(item) {
       this.cartItems.splice(this.cartItems.indexOf(item), 1);

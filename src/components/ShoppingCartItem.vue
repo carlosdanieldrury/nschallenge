@@ -7,8 +7,9 @@
   </div>
 </template>
 
-<<script>
+<script>
 export default {
+  name: 'shoppingCartItem',
   props: ['product'],
   data () {
       return {
@@ -22,6 +23,8 @@ export default {
 </script>
 
 <style>
+
+ .shoppingCartItem { }
 
   .img {
     width: 6rem;
