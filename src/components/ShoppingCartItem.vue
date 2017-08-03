@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <div class="shoppingCartItem">
     <img src="../assets/images/produto1.png">
     <p class="title">{{product.title}}</p>
     <v-icon large class="mt-2 yellow--text">remove</v-icon>
@@ -22,5 +22,15 @@ export default {
 </script>
 
 <style>
+
+  .img {
+    width: 6rem;
+    height: 6rem;
+    float: left;
+  }
+
+  .title {
+    font-size: 5em;
+  }
 
 </style>

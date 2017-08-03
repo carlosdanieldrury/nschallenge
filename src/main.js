@@ -7,12 +7,17 @@ import VueResourceMock from 'vue-resource-mock'
 import MockData from './api/products'
 import VueLocalStorage from 'vue-localstorage'
 import Vuetify from 'vuetify'
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(VueResourceMock, MockData)
 Vue.use(VueLocalStorage)
 Vue.use(Vuetify)
+Vue.use(BootstrapVue)
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 /* eslint-disable no-new */
 new Vue({

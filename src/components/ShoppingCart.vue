@@ -1,20 +1,46 @@
 <template>
   <div class="shoppingCart">
-    <h3>Shopping Card</h3>
-    <v-flex xs12 class="mt-5">
-        <v-icon large v-badge="{ value: value, bottom: true, visible: (value > 0)}" class="white--text yellow--after">shopping_basket</v-icon>
+    <v-btn v-on:click='closeShoppingCartChild()' class="dark white--text">Fechar
+      <v-icon left>keyboard_arrow_right</v-icon>
+    </v-btn>
+    <v-flex xs12 class="mt-3">
+        <v-icon large v-badge="{ value: shoppingCartSize, bottom: true, overlap: true, visible: (shoppingCartSize > 0)}" class="white--text yellow--after v-badge">shopping_basket</v-icon>
     </v-flex>
-    <img large v-badge="{ value: value, bottom:true }" class="v-badge grey--text text--lighten-4 yellow--after" src="'../assets/images/sacola.png'">
-    <img :src="'../assets/images/produto1.png'">
+    <div  v-if="shoppingCartSize==0">
+      <span>Sacola Vazia</span>
+    </div>
+    <div class="row">
+        <shoppingCartItem v-for="product in shoppingCartItems" :product="product" v-bind:key="product.id"></shoppingCartItem>
+    </div>
   </div>
 </template>
 
-<<script>
+<script>
+import ShoppingCartItem from './ShoppingCartItem'
+
 export default {
+  
+  props: ['closeShoppingCart', 'shoppingCartItems'],
+
+  created () {
+    this.shoppingCartItemsSize()
+  },
+
   data () {
       return {
-        value: 8
+        shoppingCartSize: 0
       }
+  },
+  methods: {
+    closeShoppingCartChild() {
+      console.log('close shooping cart')
+      this.closeShoppingCart()
+    }
+  },
+  computed: {
+    shoppingCartSize() {
+      this.shoppingCartSize = this.shoppingCartItems.length;
+    }
   }
 }
 </script>
@@ -45,5 +71,6 @@ export default {
 
 .v-badge {
   color: black;
+  font-size: 3em;
 }
 </style>
