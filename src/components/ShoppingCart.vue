@@ -4,11 +4,12 @@
       <v-icon left>keyboard_arrow_right</v-icon>
     </v-btn>
     <v-flex xs12 class="mt-3">
-        <v-icon large v-badge="{ value: shoppingCartSize ? shoppingCartSize : 0, bottom: true, overlap: true, visible: (shoppingCartSize > 0)}" class="white--text yellow--after v-badge">shopping_basket</v-icon>
+        <v-icon large v-badge="{ value: shoppingCartItems.length, bottom: true, overlap: true, visible: (shoppingCartItems.length > 0)}" class="white--text yellow--after v-badge">shopping_basket</v-icon>
     </v-flex>
-    <div  v-if="shoppingCartSize==0">
+    <div  v-if="shoppingCartItems.length==0">
       <span>Sacola Vazia</span>
     </div>
+    </br>
     <div class="row">
         <shoppingCartItem v-for="product in shoppingCartItems" :product="product" v-bind:key="product.id"></shoppingCartItem>
     </div>
@@ -19,22 +20,19 @@
 import ShoppingCartItem from './ShoppingCartItem'
 
 export default {
-  
   props: ['closeShoppingCart', 'shoppingCartItems'],
-
   created () {
-    this.shoppingCartItemsSize()
-  },
 
+  },
   data () {
       return {
-        shoppingCartSize: 0
+
       }
   },
 
   watch: {
     shoppingCartItems() {
-      this.shoppingCartSize = this.shoppingCartItems.length;
+      console.log('mudou  ', this.shoppingCartSize)
     }
   },
 

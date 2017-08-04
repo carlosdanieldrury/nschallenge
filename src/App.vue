@@ -17,7 +17,7 @@
 import Product from './components/Product'
 import ShoppingCart from './components/ShoppingCart'
 
-const localStorageString = 'cartItems'
+const localStorageString = "netshoes"
 
 export default {
   name: 'app',
@@ -31,12 +31,16 @@ export default {
 
   watch: {
     cartItems () {
-      this.addToLocalStorage()
+      this.addToLocalStorage(this.cartItems)
     }
   },
 
   created () {
-    this.$http.get(this.API).then((response) => this.products = response.body)
+    this.$http.get(this.API).then((response) => {
+      this.products = response.body
+      this.getFromLocalStorage()
+  })
+    
   },
   data () {
     return {
@@ -47,8 +51,14 @@ export default {
     }
   },
   methods: {
-    addToLocalStorage() {
-      this.$localStorage.set(localStorageString, this.cartItems)
+    addToLocalStorage(items) {
+      this.$localStorage.set(localStorageString, items)
+      console.log('localstorage ', items)
+    },
+    getFromLocalStorage() {
+      let result = this.$localStorage.get(localStorageString)
+      this.cartItems = (result instanceof Array) ? result : []
+      console.log('localstorage GET ', result)
     },
     addItemToCart(item) {
       this.cartItems.push(item)
