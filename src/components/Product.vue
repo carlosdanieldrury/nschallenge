@@ -1,9 +1,11 @@
 <template>
   <div class="product">
     <img src="../assets/images/produto1.png">
-    <p class="title">{{product.title}}</p>
+    <p class="titleProduct">{{product.title}}</p>
     <v-icon large class="mt-2 yellow--text">remove</v-icon>
-    <p class="price">R$ {{product.price.toFixed(2)}}</p>
+
+      <p>R$ <span class="productPrice">{{product.price.toFixed(2)}}</span></p> 
+
     <button class="buyProduct" @click="addItemToShoppingCart(product)">Comprar</button>
   </div>
 </template>
@@ -25,6 +27,11 @@ export default {
 </script>
 
 <style>
+.productPrice {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
 .buyProduct {
   background-color: black;
   width: 90%;
