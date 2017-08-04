@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <v-flex xs12 class="shoppingBasketIcon">
-        <button  @click="showCart = !showCart"><v-icon large v-badge="{ value: value, bottom: true, visible: (value > 0)}" class="mt-5 white--text yellow--after">shopping_basket</v-icon></button>
+        <button  @click="showCart = !showCart"><v-icon large class="mt-5 white--text yellow--after">shopping_basket</v-icon></button>
     </v-flex>
     <transition name="slide-fade" class="shoppingCart">
-      <shoppingCart v-if="showCart" v-bind:closeShoppingCart='closeShoppingCart' v-bind:shoppingCartItems='cartItems'></shoppingCart>
+      <shoppingCart v-if="showCart" v-bind:closeShoppingCart='closeShoppingCart' v-bind:shoppingCartItems='cartItems' :removeItemFromCartParent='removeItemFromCart'></shoppingCart>
     </transition>
     <div class="row">
         <product class="col-sm-3" v-for="product in products" :product="product" v-bind:key="product.id" :addItemToCartParent='addItemToCart'></product>
@@ -53,16 +53,13 @@ export default {
   methods: {
     addToLocalStorage(items) {
       this.$localStorage.set(localStorageString, items)
-      console.log('localstorage ', items)
     },
     getFromLocalStorage() {
       let result = this.$localStorage.get(localStorageString)
       this.cartItems = (result instanceof Array) ? result : []
-      console.log('localstorage GET ', result)
     },
     addItemToCart(item) {
       this.cartItems.push(item)
-      console.log('comprado ', this.cartItems)
     },
     removeItemFromCart(item) {
       this.cartItems.splice(this.cartItems.indexOf(item), 1);

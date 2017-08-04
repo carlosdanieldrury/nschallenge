@@ -11,7 +11,7 @@
     </div>
     </br>
     <div class="row">
-        <shoppingCartItem v-for="product in shoppingCartItems" :product="product" v-bind:key="product.id"></shoppingCartItem>
+        <shoppingCartItem v-for="product in shoppingCartItems" :product="product" v-bind:key="product.id" :removeItemFromCartRoot='removeItemFromCartSC'></shoppingCartItem>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 import ShoppingCartItem from './ShoppingCartItem'
 
 export default {
-  props: ['closeShoppingCart', 'shoppingCartItems'],
+  props: ['closeShoppingCart', 'shoppingCartItems', 'removeItemFromCartParent'],
   created () {
 
   },
@@ -31,15 +31,14 @@ export default {
   },
 
   watch: {
-    shoppingCartItems() {
-      console.log('mudou  ', this.shoppingCartSize)
-    }
   },
 
   methods: {
     closeShoppingCartChild() {
-      console.log('close shooping cart')
       this.closeShoppingCart()
+    },
+    removeItemFromCartSC(item) {
+      this.removeItemFromCartParent(item)
     }
   },
   computed: {

@@ -4,22 +4,24 @@
       <img class='' src="../assets/images/produto1.png">
     </div>
     <p class="title">{{product.title}}</p>
-    <v-icon large class="mt-2 yellow--text">remove</v-icon>
     <p class="price">{{product.price}}</p>
+    <button  @click='removeItemFromCart(product)'><v-icon large class="mt-5 white--text yellow--after">remove</v-icon></button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'shoppingCartItem',
-  props: ['product'],
+  props: ['product', 'removeItemFromCartRoot'],
   data () {
       return {
           
       }
   },
   methods: {
-
+    removeItemFromCart(item) {
+      this.removeItemFromCartRoot(item)
+    }
   }
 }
 </script>
