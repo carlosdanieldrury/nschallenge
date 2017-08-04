@@ -126,5 +126,6 @@ export default {
   right: 0;
   width: 600px;
   height: 100%;
+  overflow: scroll;
 }
 </style>
