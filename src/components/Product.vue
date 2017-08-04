@@ -3,8 +3,8 @@
     <img src="../assets/images/produto1.png">
     <p class="title">{{product.title}}</p>
     <v-icon large class="mt-2 yellow--text">remove</v-icon>
-    <p class="price">{{product.price}}</p>
-    <button @click="addItemToShoppingCart(product)">Comprar</button>
+    <p class="price">R$ {{product.price.toFixed(2)}}</p>
+    <button class="buyProduct" @click="addItemToShoppingCart(product)">Comprar</button>
   </div>
 </template>
 
@@ -25,5 +25,29 @@ export default {
 </script>
 
 <style>
+.buyProduct {
+  background-color: black;
+  width: 90%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
 
+.buyProduct:hover {
+  background-color: goldenrod;
+  width: 90%;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
 </style>

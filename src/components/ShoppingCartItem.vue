@@ -1,11 +1,21 @@
 <template>
-  <div class="shoppingCartItem row">
+  <div class="shoppingCartItem">
+    <hr class="line-separator"></hr>
     <div class="thumbnail">
       <img class='' src="../assets/images/produto1.png">
     </div>
-    <p class="title">{{product.title}}</p>
-    <p class="price">{{product.price}}</p>
-    <button  @click='removeItemFromCart(product)'><v-icon large class="mt-5 white--text yellow--after">remove</v-icon></button>
+    <div class="col-xs-8 mt-2">
+      <p class="title">{{product.title}}</p>
+    </div>
+    <div>
+      <p class="description">{{product.availableSizes.join("")}} | {{product.style}}</p>
+    </div>
+    <div class="col-xs-2 mt-2">
+      <button class="removeItem"  @click='removeItemFromCart(product)'><v-icon large class="mt-5 white--text yellow--after">delete_forever</v-icon></button>
+      <div class="priceCartItem"> <p>{{product.price.toFixed(2)}}</p></div>
+    </div>
+    
+    
   </div>
 </template>
 
@@ -26,12 +36,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
  .shoppingCartItem { 
-    width: 90%;
-    margin: 40px;
+    width: 100%;
+    margin: 20px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+ }
 
+ .shoppingCartItem:hover {
+   background:#717171
  }
 
   .img {
@@ -42,21 +57,61 @@ export default {
 
   .thumbnail {
     float: left;
-    width: 60px;
+    width: 80px;
     /*width : 100%; */
-    max-height: 60px;
-    margin: 10px;
+    height: 80px;
+    margin: 5px;
     border: 3px solid #73AD21; 
 }
 
 .thumbnail img{
-    width: 100%;
+    width: 60px;
     height: auto;
     display: block;
 }
 
   .title {
-    font-size: 5em;
+    margin-top: 15px;
+    font-size: 4em;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
   }
+
+  .line-separator{
+    height:1px;
+    background: black;
+    border-bottom:1px solid black;
+  }
+
+  .description {
+    font-size: 1em;
+    color:gray;
+}
+
+
+.colorProduct {
+
+}
+
+.qtd {
+
+}
+
+.removeItem {
+  margin-right: 50px;
+  float: right;
+}
+
+.priceCartItem {
+  text-align: right;
+  font-size: 1.5em;
+  margin-right: 50px;
+  color: goldenrod;
+
+}
+
+
 
 </style>

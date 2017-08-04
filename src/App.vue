@@ -17,6 +17,8 @@
 import Product from './components/Product'
 import ShoppingCart from './components/ShoppingCart'
 
+import '@/assets/css/font-awesome.min.css'
+
 const localStorageString = "netshoes"
 
 export default {
@@ -106,7 +108,7 @@ export default {
 
 .shoppingBasketIcon {
   position: fixed;
-  background: black;
+  background: #202025;
   width: 10rem;
   height: 10rem;
   z-index: 1 !important;
@@ -116,7 +118,7 @@ export default {
 }
 
 .shoppingCart {
-  background: black;
+  background: #202025;
   color: white;
   position: fixed;
   z-index: 1 !important;

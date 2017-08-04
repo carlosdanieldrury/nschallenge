@@ -13,6 +13,11 @@
     <div class="row">
         <shoppingCartItem v-for="product in shoppingCartItems" :product="product" v-bind:key="product.id" :removeItemFromCartRoot='removeItemFromCartSC'></shoppingCartItem>
     </div>
+    <div  v-if="shoppingCartItems.length > 0">
+      <p class="subtotalText">SUBTOTAL</p>
+      <p class="priceTotal">R$ {{ total }}</p>
+      <button class="buy">COMPRAR</button>
+    </div>
   </div>
 </template>
 
@@ -42,6 +47,9 @@ export default {
     }
   },
   computed: {
+    total() {
+      return this.shoppingCartItems.reduce((sum, i) => sum + i.price, 0).toFixed(2)
+    }
   },
   components: {
     ShoppingCartItem
@@ -61,20 +69,53 @@ export default {
   font-style: oblique;
 }
 
-.description {
 
-}
-
-.sizeProduct {
-
-}
-
-.colorProduct {
-
-}
 
 .v-badge {
   color: black;
   font-size: 3em;
+}
+
+.subtotalText {
+  text-align: left;
+  font-size: 1em;
+  margin-left: 30px;
+  color: dimgray;
+}
+
+.priceTotal {
+  text-align: right;
+  font-size: 2em;
+  color: goldenrod;
+}
+
+.optionPayment {
+
+}
+
+.buy {
+  background-color: black;
+  width: 90%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.buy:hover {
+  background-color: gray;
+  width: 90%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
 }
 </style>
