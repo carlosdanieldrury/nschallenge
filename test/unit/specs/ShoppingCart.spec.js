@@ -2,7 +2,7 @@ import Vue from 'vue'
 import ShoppingCart from '@/components/ShoppingCart'
 import Product from '@/components/Product'
 import ShoppingCartItem from '@/components/ShoppingCartItem'
-import products from '@/api/products'
+import products from './products'
 import App from '@/App'
 
 describe('ShoppingCart.vue', () => {

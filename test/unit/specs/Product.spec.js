@@ -1,13 +1,11 @@
 import Vue from 'vue'
-import ShoppingCart from '@/components/ShoppingCart'
 import Product from '@/components/Product'
-import ShoppingCartItem from '@/components/ShoppingCartItem'
 import products from './products'
 
-describe('ShoppingCartItem.vue', () => {
-  const Constructor = Vue.extend(ShoppingCartItem)
+describe('Product.vue', () => {
+  const Constructor = Vue.extend(Product)
   const props = products.products[0];
-  it('should render correct contents of Products on ShoppingCart component', () => {
+  it('should render correct contents of Products on Product component', () => {
     const vm = new Constructor(
       { propsData: {
           product: props
