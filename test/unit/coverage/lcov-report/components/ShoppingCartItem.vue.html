@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src\components\ShoppingCart.vue</title>
+    <title>Code coverage report for components\ShoppingCartItem.vue</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">src/components/</a> ShoppingCart.vue
+      <a href="../index.html">all files</a> / <a href="index.html">components/</a> ShoppingCartItem.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/5</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/1</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>0/2</span>
       </div>
     </div>
   </div>
@@ -160,10 +160,7 @@
 115
 116
 117
-118
-119
-120
-121</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+118</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,22 +177,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -208,12 +189,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -284,135 +278,132 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div class="shoppingCart"&gt;
-    &lt;v-btn v-on:click='closeShoppingCartChild()' class="dark white--text"&gt;Fechar
-      &lt;v-icon left&gt;keyboard_arrow_right&lt;/v-icon&gt;
-    &lt;/v-btn&gt;
-    &lt;v-flex xs12 class="mt-3"&gt;
-        &lt;v-icon large v-badge="{ value: shoppingCartItems.length, bottom: true, overlap: true, visible: (shoppingCartItems.length &gt; 0)}" class="white--text yellow--after v-badge"&gt;shopping_basket&lt;/v-icon&gt;
-    &lt;/v-flex&gt;
-    &lt;div  v-if="shoppingCartItems.length==0"&gt;
-      &lt;span&gt;Sacola Vazia&lt;/span&gt;
+  &lt;div class="shoppingCartItem"&gt;
+    &lt;hr class="line-separator"&gt;&lt;/hr&gt;
+    &lt;div class="thumbnail"&gt;
+      &lt;img class='' src="../assets/images/produto1.png"&gt;
     &lt;/div&gt;
-    &lt;/br&gt;
-    &lt;div class="row"&gt;
-        &lt;shoppingCartItem v-for="product in shoppingCartItems" :product="product" v-bind:key="product.id" :removeItemFromCartRoot='removeItemFromCartSC'&gt;&lt;/shoppingCartItem&gt;
+    &lt;div class="col-xs-8 mt-2"&gt;
+      &lt;p class="title"&gt;{{product.title}}&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div  v-if="shoppingCartItems.length &gt; 0"&gt;
-      &lt;p class="subtotalText"&gt;SUBTOTAL&lt;/p&gt;
-      &lt;p class="priceTotal"&gt;R$ {{ total }}&lt;/p&gt;
-      &lt;button class="buy"&gt;COMPRAR&lt;/button&gt;
+    &lt;div&gt;
+      &lt;p class="description"&gt;{{product.availableSizes.join("")}} | {{product.style}}&lt;/p&gt;
     &lt;/div&gt;
+    &lt;div class="col-xs-2 mt-2"&gt;
+      &lt;button class="removeItem"  @click='removeItemFromCart(product)'&gt;&lt;v-icon large class="mt-5 white--text yellow--after"&gt;delete_forever&lt;/v-icon&gt;&lt;/button&gt;
+      &lt;div class="priceCartItem"&gt; &lt;p&gt;{{product.price.toFixed(2)}}&lt;/p&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    
   &lt;/div&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-import ShoppingCartItem from './ShoppingCartItem'
-&nbsp;
 export default {
-  props: ['closeShoppingCart', 'shoppingCartItems', 'removeItemFromCartParent'],
-  created () {
-&nbsp;
-  },
+  name: 'shoppingCartItem',
+  props: ['product', 'removeItemFromCartRoot'],
   data () {
-      return {
-&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+          
       }
   },
-&nbsp;
-  watch: {
-  },
-&nbsp;
   methods: {
-    closeShoppingCartChild() {
-<span class="cstat-no" title="statement not covered" >      this.closeShoppingCart()</span>
-    },
-    removeItemFromCartSC(item) {
-<span class="cstat-no" title="statement not covered" >      this.removeItemFromCartParent(item)</span>
+    removeItemFromCart(item) {
+<span class="cstat-no" title="statement not covered" >      this.removeItemFromCartRoot(item)</span>
     }
-  },
-  computed: {
-    total() {
-<span class="cstat-no" title="statement not covered" >      return this.shoppingCartItems.reduce((sum, i) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >sum + i.price,</span></span> 0).toFixed(2)</span>
-    }
-  },
-  components: {
-    ShoppingCartItem
   }
 }
 &lt;/script&gt;
 &nbsp;
-&lt;style&gt;
+&lt;style scoped&gt;
 &nbsp;
-.pic {
-  width: 60px;
-  height: 60px;
+ .shoppingCartItem { 
+    width: 100%;
+    margin: 20px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+ }
+&nbsp;
+ .shoppingCartItem:hover {
+   background:#717171
+ }
+&nbsp;
+  .img {
+    width: 6rem;
+    height: 6rem;
+    float: left;
+  }
+&nbsp;
+  .thumbnail {
+    float: left;
+    width: 80px;
+    /*width : 100%; */
+    height: 80px;
+    margin: 5px;
+    border: 3px solid #73AD21; 
 }
 &nbsp;
-.title {
-  font-size: 6em;
-  font-style: oblique;
+.thumbnail img{
+    width: 60px;
+    height: auto;
+    display: block;
+}
+&nbsp;
+  .title {
+    margin-top: 15px;
+    font-size: 4em;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+&nbsp;
+  }
+&nbsp;
+  .line-separator{
+    height:1px;
+    background: black;
+    border-bottom:1px solid black;
+  }
+&nbsp;
+  .description {
+    font-size: 1em;
+    color:gray;
 }
 &nbsp;
 &nbsp;
+.colorProduct {
 &nbsp;
-.v-badge {
-  color: black;
-  font-size: 3em;
 }
 &nbsp;
-.subtotalText {
-  text-align: left;
-  font-size: 1em;
-  margin-left: 30px;
-  color: dimgray;
+.qtd {
+&nbsp;
 }
 &nbsp;
-.priceTotal {
+.removeItem {
+  margin-right: 50px;
+  float: right;
+}
+&nbsp;
+.priceCartItem {
   text-align: right;
-  font-size: 2em;
+  font-size: 1.5em;
+  margin-right: 50px;
   color: goldenrod;
-}
-&nbsp;
-.optionPayment {
 &nbsp;
 }
 &nbsp;
-.buy {
-  background-color: black;
-  width: 90%;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
 &nbsp;
-.buy:hover {
-  background-color: gray;
-  width: 90%;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-&lt;/style&gt;</pre></td></tr>
+&nbsp;
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Aug 06 2017 22:58:02 GMT-0300 (E. South America Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Aug 06 2017 19:58:13 GMT-0300 (E. South America Standard Time)
 </div>
 </div>
-<script src="../../prettify.js"></script>
+<script src="../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -420,6 +411,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../sorter.js"></script>
+<script src="../sorter.js"></script>
 </body>
 </html>

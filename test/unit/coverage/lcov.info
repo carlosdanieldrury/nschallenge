@@ -17,10 +17,10 @@ TN:
 SF:C:\dev\netshoes\netshoes-recruitment\src\components\ShoppingCartItem.vue
 FNF:0
 FNH:0
-DA:27,0
+DA:27,1
 DA:33,0
 LF:2
-LH:0
+LH:1
 BRF:0
 BRH:0
 end_of_record
@@ -55,10 +55,10 @@ FNH:0
 FNDA:0,(anonymous_0)
 DA:22,1
 DA:36,0
-DA:41,1
+DA:41,0
 DA:42,0
 DA:43,0
-DA:48,1
+DA:48,0
 DA:57,0
 DA:60,0
 DA:61,0
@@ -66,7 +66,7 @@ DA:64,0
 DA:67,0
 DA:70,0
 LF:12
-LH:3
+LH:1
 BRDA:61,0,0,0
 BRDA:61,0,1,0
 BRF:2

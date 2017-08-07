@@ -6,19 +6,23 @@ import products from '@/api/products'
 import App from '@/App'
 
 describe('ShoppingCart.vue', () => {
+
+
   const Constructor = Vue.extend(ShoppingCart)
   const props = products.products;
-  it('should render correct contents of Products on ShoppingCart component', () => {
+  it('should render correct contents of Products on ShoppingCart component', done => {
     const vm = new Constructor(
       { propsData: {
-          products: props
+          shoppingCartItems: props
         }
       }
     ).$mount()
-    expect(vm.$el.products)
-      .to.equal(products.products)
+
+    Vue.nextTick(() => {
+      expect(vm.shoppingCartItems).to.equal(products.products)
+      done()
+    })
+
   })
 
 })
-
-
