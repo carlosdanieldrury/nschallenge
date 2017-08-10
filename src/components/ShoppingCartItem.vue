@@ -2,7 +2,7 @@
   <div class="shoppingCartItem">
     <hr class="line-separator"></hr>
     <div class="thumbnail">
-      <img class='' src="../assets/images/produto1.png">
+      <img class='' :src="imagePath">
     </div>
     <div class="col-xs-8 mt-2">
       <p class="title">{{product.title}}</p>
@@ -31,6 +31,11 @@ export default {
   methods: {
     removeItemFromCart(item) {
       this.removeItemFromCartRoot(item)
+    }
+  },
+  computed: {
+    imagePath: function () {
+      return '/static/images/produto' + this.product.id % 9 + '.png'
     }
   }
 }
