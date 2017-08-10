@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-flex xs12 class="shoppingBasketIcon">
-        <button  @click="showCart = !showCart"><v-icon large class="mt-5 white--text yellow--after">shopping_basket</v-icon></button>
+        <button  @click="showCart = !showCart"><v-icon large v-badge="{ value: cartItems.length, bottom: true, overlap: true, visible: (cartItems.length > 0)}" class="mt-5 white--text yellow--after">shopping_basket</v-icon></button>
     </v-flex>
     <transition name="slide-fade" class="shoppingCart">
       <shoppingCart v-if="showCart" v-bind:closeShoppingCart='closeShoppingCart' v-bind:shoppingCartItems='cartItems' :removeItemFromCartParent='removeItemFromCart'></shoppingCart>
@@ -111,6 +111,7 @@ export default {
   background: #202025;
   width: 10rem;
   height: 10rem;
+  font-size: 3em;
   z-index: 1 !important;
   top: 0px;
   right: 0px;

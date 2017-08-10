@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <img src="../assets/images/produto1.png">
+    <img :src="imagePath">
     <p class="titleProduct">{{product.title}}</p>
     <v-icon large class="mt-2 yellow--text">remove</v-icon>
 
@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<<script>
+<script>
 export default {
   props: ['product', 'addItemToCartParent'],
   data () {
@@ -21,6 +21,11 @@ export default {
   methods: {
     addItemToShoppingCart(item) {
       this.addItemToCartParent(item)
+    }
+  },
+  computed: {
+    imagePath: function () {
+      return '/static/images/produto' + this.product.id % 9 + '.png'
     }
   }
 }
